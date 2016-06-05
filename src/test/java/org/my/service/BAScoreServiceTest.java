@@ -18,11 +18,11 @@ import static org.junit.Assert.assertArrayEquals;
 public class BAScoreServiceTest {
 
     @Autowired
-    private BAScoreService bawlingScoreService;
+    private BAScoreService bowlingScoreService;
 
     @Test
     public void testBAExampleTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 0, 1, 7, 3, 6, 4, 10, 0, 2, 8, 6}
         );
         assertArrayEquals(new int[]{5, 14, 29, 49, 60, 61, 77, 97, 117, 133}, score);
@@ -30,7 +30,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBAAllStrikesTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 10, 10}
         );
         assertArrayEquals(new int[]{30, 60, 90, 120, 150, 180, 210, 240, 270, 300}, score);
@@ -38,7 +38,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBAAllStrikesExceptBonusShotTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 10, 3}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -47,7 +47,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBAAllSparesTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -56,7 +56,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBANoStrikesNoSparesTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -65,7 +65,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBA1StrikeTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{1, 2, 10, 0, 5, 2, 7, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -74,7 +74,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBA3StrikesTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{1, 2, 10, 0, 10, 0, 10, 0, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -83,7 +83,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBA1SpareTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{1, 2, 3, 7, 5, 2, 7, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -92,7 +92,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBAHalfFramesTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{1, 2, 10, 0, 10, 0, 10, 0, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -101,7 +101,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBANoKnocksTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -110,7 +110,7 @@ public class BAScoreServiceTest {
 
     @Test
     public void testBANoBonusShotTest() throws Exception {
-        int[] score = bawlingScoreService.runBAWithCheck(
+        int[] score = bowlingScoreService.runBAWithCheck(
                 new int[]{5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, -1}
         );
         Arrays.stream(score).boxed().forEach(el -> System.out.print(el + " "));
@@ -119,35 +119,35 @@ public class BAScoreServiceTest {
 
     @Test(expected = BAException.class)
     public void testBAWrongFrameSumTest() throws Exception {
-        bawlingScoreService.runBAWithCheck(
+        bowlingScoreService.runBAWithCheck(
                 new int[]{5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         );
     }
 
     @Test(expected = BAException.class)
     public void testBAWrongShotValueTest() throws Exception {
-        bawlingScoreService.runBAWithCheck(
+        bowlingScoreService.runBAWithCheck(
                 new int[]{12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         );
     }
 
     @Test(expected = BAException.class)
     public void testBAWrongLastFrameSumTest() throws Exception {
-        bawlingScoreService.runBAWithCheck(
+        bowlingScoreService.runBAWithCheck(
                 new int[]{5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 3}
         );
     }
 
     @Test(expected = BAException.class)
     public void testBAWrongBonusShotValueTest() throws Exception {
-        bawlingScoreService.runBAWithCheck(
+        bowlingScoreService.runBAWithCheck(
                 new int[]{5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 11}
         );
     }
 
     @Test(expected = BAException.class)
     public void testBAWrongInputArraySizeTest() throws Exception {
-        bawlingScoreService.runBAWithCheck(
+        bowlingScoreService.runBAWithCheck(
                 new int[]{5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         );
     }

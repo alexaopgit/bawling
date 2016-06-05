@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class BAController {
 
     @Autowired
-    private BAScoreService bawlingScoreService;
+    private BAScoreService bowlingScoreService;
 
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
@@ -24,7 +24,7 @@ public class BAController {
     public int[] getScore(
             @RequestBody int[] knockedPins
     ) throws BAException {
-        return bawlingScoreService.runBAWithCheck(knockedPins);
+        return bowlingScoreService.runBAWithCheck(knockedPins);
     }
 
     @RequestMapping(value = "/bowling", method = RequestMethod.GET)
