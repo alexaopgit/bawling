@@ -48,12 +48,10 @@ public class BAControllerIT {
 
     @Test
     public void getPage() throws Exception {
-
         ResponseEntity<String> response = template.getForEntity(
                 UriComponentsBuilder.fromHttpUrl("http://localhost:" + port + "/bowling").build().toUri(),
                 String.class
         );
         assertEquals(HttpStatus.OK, response.getStatusCode());
-//        assertArrayEquals(scoreExpected, response.getBody());
     }
 }
