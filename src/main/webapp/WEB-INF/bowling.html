@@ -36,6 +36,12 @@
         <div class="main">
             <h1 class="page-header">Bowling game score calculator</h1>
 
+            <div class="jumbotron">
+                <p>Fill each shot input with number of knocked down pins</p>
+                <p>If it was a strike, fill 10 for a first ball and 0 for a second ball</p>
+                <p>If you have only several shots, fill what you have</p>
+                <p>Press 'Get Score' button to get score by frames</p>
+            </div>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="alertPlace"></div>
@@ -62,6 +68,7 @@
                             <input type='text' class="input-xs" id="input-10-1"/>
                             <input type='text' class="input-xs" id="input-10-2"/>
                             <input type='text' class="input-xs" id="input-10-3"/>
+                            <span> - shots</span>
                         </div>
                         <div class="form-inline form-group">
                             <input type='text' class="input-2xs" id="frame-1"/>
@@ -74,6 +81,7 @@
                             <input type='text' class="input-2xs" id="frame-8"/>
                             <input type='text' class="input-2xs" id="frame-9"/>
                             <input type='text' class="input-3xs" id="frame-10"/>
+                            <span>- frames</span>
                         </div>
                         <button type="button" class="btn btn-default btn-get-score">Get Score</button>
                     </div>
